@@ -8,8 +8,6 @@ Created on Sun Oct 27 09:48:53 2019
 
 import pandas as pd
 import numpy as np
-from scipy.stats import randint as sp_randint
-import scipy.stats as ss
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV
 from sklearn.linear_model import LogisticRegression
