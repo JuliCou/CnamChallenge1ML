@@ -10,7 +10,6 @@ import pandas as pd
 import numpy as np
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 from sklearn.model_selection import StratifiedKFold, RandomizedSearchCV
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from xgboost import XGBClassifier
@@ -211,7 +210,7 @@ xgb.fit(X, y)
 
 # Predictions
 last = df.shape[0]
-test["status_group"] = xgb.predict(df.iloc[piv_train:last])
+test["status_group"] = xgb.predict(df.iloc[piv_train:last].values)
 
 # Output files
 test = test.replace("functional", 0).replace("non functional", 1).replace("functional needs repair", 2)
